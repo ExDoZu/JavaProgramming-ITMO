@@ -1,0 +1,5 @@
+javac LabName.java
+jar cmf MANIFEST.MF LabName.jar *.class
+java -jar LabName.jar
+
+java LabTwo

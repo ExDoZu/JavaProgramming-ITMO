@@ -1,0 +1,117 @@
+@startuml
+namespace ru.ifmo.se.pokemon{
+class Pokemon{}
+class Move{}
+class StatusMove{}
+class DamageMove{}
+class PhysicalMove{}
+class SpecialMove{}
+Move<|-- StatusMove
+Move<|-- DamageMove
+DamageMove<|-- PhysicalMove
+DamageMove<|-- SpecialMove
+Pokemon <.. Move
+
+}
+
+class SandyGast{
+SandyGast(name: String, level: int)
+}
+class Palossand{
+Palossand(name: String, level: int)
+}
+class Pidove{
+Pidove(name: String, level: int)
+
+}
+class Tranquill{
+Tranquill(name: String, level: int)
+}
+class Unfezant{
+Unfezant(Sname: String, level: int)
+}
+class Minun{
+Minun(name: String, level: int)
+}
+ru.ifmo.se.pokemon.Pokemon<|--SandyGast
+SandyGast<|--Palossand
+ru.ifmo.se.pokemon.Pokemon<|--Pidove
+Pidove<|--Tranquill
+Tranquill<|-- Unfezant
+ru.ifmo.se.pokemon.Pokemon<|--Minun
+
+class Confide{
+Confide()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class Growth{
+Growth()
+#applySelfEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class SwordsDance {
+ SwordsDance ()
+ #applySelfEffects(pokemon: Pokemon): void
+ #describe(): String
+ }
+class MegaDrain {
+  MegaDrain ()
+  #applySelfEffects(pokemon: Pokemon): void
+  #describe(): String
+}
+class ShadowBall {
+ShadowBall ()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class Rest {
+Rest ()
+#applySelfEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class Snarl {
+Snarl()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class Bulldoze {
+Bulldoze ()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class DoubleTeam {
+DoubleTeam ()
+#applySelfEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class ThunderWave {
+ThunderWave ()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class FocusBlast {
+FocusBlast ()
+#applyOppEffects(pokemon: Pokemon): void
+#describe(): String
+}
+class DazzlingGleam {
+DazzlingGleam ()
+#describe(): String
+}
+
+ru.ifmo.se.pokemon.StatusMove <|-- DoubleTeam
+ru.ifmo.se.pokemon.StatusMove <|-- Rest
+ru.ifmo.se.pokemon.StatusMove <|-- Confide
+ru.ifmo.se.pokemon.StatusMove <|-- ThunderWave
+ru.ifmo.se.pokemon.StatusMove <|-- SwordsDance
+ru.ifmo.se.pokemon.StatusMove <|-- Growth
+ru.ifmo.se.pokemon.PhysicalMove <|-- Bulldoze
+ru.ifmo.se.pokemon.SpecialMove <|-- FocusBlast
+ru.ifmo.se.pokemon.SpecialMove <|-- MegaDrain
+ru.ifmo.se.pokemon.SpecialMove <|-- Snarl
+ru.ifmo.se.pokemon.SpecialMove <|-- DazzlingGleam
+ru.ifmo.se.pokemon.SpecialMove <|-- ShadowBall
+
+
+@enduml
